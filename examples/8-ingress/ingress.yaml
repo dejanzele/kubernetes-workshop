@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-workshop-example
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: example.bakson.rs
+      http:
+        paths:
+          - path: /health
+            pathType: Prefix
+            backend:
+              service:
+                name: k8s-workshop-example
+                port:
+                  number: 8080

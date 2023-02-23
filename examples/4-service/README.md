@@ -32,3 +32,43 @@ spec:
       targetPort: 8080
   type: ClusterIP
 ```
+
+* apiVersion: specifies the Kubernetes API version for the resource.
+* kind: defines the kind of resource, in this case a Service.
+* metadata: contains metadata about the Service, including its name and namespace.
+* name: k8s-workshop-example: specifies the name of the Service.
+* spec: defines the specification for the Service.
+* selector: specifies the labels used to select the Pods that the Service will target.
+* ports: specifies the ports that the Service will listen on and forward traffic to.
+* `name: http`: specifies a name for the port, which can be used in other resources to refer to this port by name.
+* `port: 8080`: specifies the port number that the Service will listen on.
+* `targetPort: 8080`: specifies the port number that traffic should be forwarded to on the Pods that the Service is targeting.
+* `type: ClusterIP`: specifies the type of Service, in this case a ClusterIP Service, which provides a stable IP address and DNS name for other parts of your application to access the Pods within the cluster.
+
+### Install
+
+Run the following command to create the Service:
+```bash
+kubectl apply -f service.yaml
+```
+
+### List
+
+Run the following command to check the status of the Service:
+```bash
+kubectl get service
+```
+
+### Describe
+
+Run the following command to check the details of the Service:
+```bash
+kubectl describe service k8s-workshop-example
+```
+
+### Delete
+
+Run the following command to delete the Service:
+```bash
+kubectl delete -f service.yaml
+```

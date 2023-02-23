@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: dpejcev/testkube-triggers-example:1.0.12
+          image: dpejcev/testkube-triggers-example:1.0.15
           ports:
             - containerPort: 8080
           env:

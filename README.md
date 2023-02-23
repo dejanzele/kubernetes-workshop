@@ -38,6 +38,7 @@ You will need to install two tools in order to successfully follow this guide:
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/) - Docker Desktop is a one-click-install application for your Mac, Linux, or Windows environment that enables you to build and share containerized applications and microservices.
 * [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) - The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters.
 * [minikube](https://minikube.sigs.k8s.io/docs/start/) - minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+* [helm](https://helm.sh/docs/intro/install/) - Helm is a package manager for Kubernetes that allows you to define, install, and upgrade Kubernetes applications.
 
 ### Setting up local Kubernetes cluster
 For the purpose of this guide, we will use Kubernetes v1.24.9.
@@ -77,6 +78,12 @@ NAME           STATUS   ROLES           AGE   VERSION
 k8s-workshop   Ready    control-plane   68s   v1.24.9
 ```
 
+Now enable the minikube ingress addon:
+```shell
+minikube addons enable ingress -p k8s-workshop
+```
+
 ## References
 * [Kubernetes docs](https://kubernetes.io/docs/home/) - Official Kubernetes documentation
 * [kubectl docs](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) - Official kubectl reference documentation
+* [helm docs](https://helm.sh/docs/) - Official Helm documentation

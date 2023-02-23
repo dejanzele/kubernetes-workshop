@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-workshop-example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: example
+  template:
+    metadata:
+      labels:
+        app: example
+    spec:
+      containers:
+        - name: app
+          image: dpejcev/testkube-triggers-example:1.0.15
+          ports:
+            - containerPort: 8080
